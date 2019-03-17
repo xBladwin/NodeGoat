@@ -218,7 +218,7 @@ function SessionHandler(db) {
 
                     //prepare data for the user
                     prepareUserData(user, next);
-                    /*
+
                     sessionDAO.startSession(user._id, function(err, sessionId) {
 
                         if (err) return next(err);
@@ -227,7 +227,7 @@ function SessionHandler(db) {
                         req.session.userId = user._id;
                         return res.render("dashboard", user);
                     });
-                    */
+
                     req.session.regenerate(function() {
                         req.session.userId = user._id;
                         // Set userId property. Required for left nav menu links
